@@ -4,22 +4,53 @@
     <meta charset="utf-8">
     <title>Jquery exercices base 2</title>
     <link rel="stylesheet" href="style.css">
-    <script src="jquery.js"></script>
+    <!-- <script src="jquery.js"></script> -->
+    <script
+       src="https://code.jquery.com/jquery-3.2.1.js"
+       integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+       crossorigin="anonymous">
+    </script>
   </head>
   <body>
+
       <h1>Exercices Jquery base 2</h1>
       <p><b>Charger la dernière version de Jquery et lier le fichier dans la balise head du document html.</b></p>
 
       <hr>
       <!-------------------------------------------- Exercice 1 -------------------------------------->
+
       <h3><em>Exercice 1</em></h3>
       <p>Créer un bouton "cliquez-moi!" en html. <br>Au clic sur le bouton, afficher une boite de dialogue avec le message :<br><b>"On vous ferait vraiment faire n'importe quoi !"</b></p>
+
+      <button class="boutton">Cliquez-moi</button>
+      <script>
+
+      $(".boutton").click(function(){
+        alert("on vous fait dire n'importe quoi")
+      });
+
+      </script>
+
+
+
+
 
       <hr>
       <!-------------------------------------------- Exercice 2 -------------------------------------->
       <h3>Exercice 2</h3>
       <p>Au double click, modifier la largeur de l'image à <b>1735px</b></p>
-      <img src="image1.jpg"/>
+      <!-- <img src="image1.jpg"/> -->
+      <img class="tigre" src="image1.jpg"/>
+
+   <script>
+
+    $(".tigre").dblclick(function(){
+      $(this).css("width","1735px")
+    });
+
+   </script>
+
+
 
       <hr>
       <!-------------------------------------------- Exercice 3 -------------------------------------->
@@ -38,6 +69,17 @@
               <br><b>Charles Antony Richard Hoare</b></p>
       </div>
 
+        <script>
+          $("#exo3").mouseover(function(){
+            $(this).css({
+              "background-color":"#63A8BC","color":"#fff","width":"450px","height":"370px","font-size":"20px"
+          })
+
+          });
+        </script>
+
+
+
       <hr>
       <!-------------------------------------------- Exercice 4 -------------------------------------->
       <h3>Exercice 4</h3>
@@ -50,17 +92,57 @@
       <button id="btn2">Bleu</button>
       <button id="btn3">Rouge</button>
 
+      <script>
+      $("#btn1").click(function(){
+      $("#exo4").css({ "border-color":"green","color":"green"});
+
+
+    });
+      </script>
+
+      <script>
+      $("#btn2").click(function(){
+      $("#exo4").css({ "border-color":"blue","color":"blue"});
+
+
+    });
+      </script>
+
+
+      <script>
+      $("#btn3").click(function(){
+      $("#exo4").css({ "border-color":"red","color":"red"});
+
+
+      });
+      </script>
       <hr>
       <!-------------------------------------------- Exercice 5 -------------------------------------->
       <h3>Exercice 5</h3>
       <p>Quand un champ a le focus, définir sa bordure à "1px solid green". Quand le champ perd le focus, définir la bordure à "1px solid red"</p>
 
       <form>
-          <input type="text" placeholder="Votre nom">
-          <input type="text" placeholder="Votre prénom">
-          <input type="password" placeholder="Votre mot de passe">
-          <button type="submit">Valider</button>
+          <input  type="text" placeholder="Votre nom">
+          <input  type="text" placeholder="Votre prénom">
+          <input  type="password" placeholder="Votre mot de passe">
+          <button  type="submit">Valider</button>
       </form>
+
+
+      <script>
+        $("input").focus(function(){
+        $(this).css({ "border":"1px solid green"
+          })
+        });
+
+
+        $("input").focusout(function(){
+          $(this).css({"border":"1px solid red"
+          })
+        });
+
+
+      </script>
 
       <hr>
       <!-------------------------------------------- Exercice 6 -------------------------------------->
@@ -74,6 +156,36 @@
       <button id="btn4">Vert</button>
       <button id="btn5">Bleu</button>
       <button id="btn6">Rouge</button>
+
+      <script>
+        $("#btn4").mouseover(function(){
+        $("#exo6").css({"color":"green"})
+        });
+
+        $("#btn4").mouseout(function(){
+          $("#exo6").css({"color":"black"})
+        });
+
+        $("#btn5").mouseover(function(){
+        $("#exo6").css({"color":"blue"})
+        });
+
+        $("#btn5").mouseout(function(){
+          $("#exo6").css({"color":"black"})
+        });
+
+        $("#btn6").mouseover(function(){
+        $("#exo6").css({"color":"red"})
+        });
+
+        $("#btn6").mouseout(function(){
+          $("#exo6").css({"color":"black"})
+        });
+
+
+
+      </script>
+
 
 
   </body>
